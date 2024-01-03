@@ -7,6 +7,7 @@ import Image from "next/image";
 
 function Followers() {
   const [data, setData] = useState(exampleData);
+  
 
   const boxCreator = () =>
     data.map((singleObject) => (
@@ -28,12 +29,12 @@ function Followers() {
     ));
 
   return (
-    <div className="flex flex-col h-full w-full items-center">
+    <div className="flex flex-col h-full w-full">
       <div>
-        <h1 className="text-2xl font-bold my-4 text-black ">Social Media Followers</h1>
+        <h1 className="text-2xl font-bold my-4 text-black">Social Media Followers</h1>
       </div>
      
-      <div className="flex flex-wrap -mx-2 ">
+      <div className="flex flex-wrap -mx-2 items-center">
         {boxCreator()}
       </div>
     </div>

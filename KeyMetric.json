@@ -1,0 +1,32 @@
+[
+    {
+    "metric": "Clicks",
+    "last": 2117,
+    "prev": 1273
+  },
+  {
+    "metric": "Likes",
+    "last": 602,
+    "prev": 530
+  },
+  {
+    "metric": "Shares",
+    "last": 77,
+    "prev": 88
+  },
+  {
+    "metric": "Followers",
+    "last": 11862,
+    "prev": 11438
+  },
+  {
+    "metric": "New Followers",
+    "last": 366,
+    "prev": 454
+  },
+  {
+    "metric": "Impressions",
+    "last": 163385,
+    "prev": 134133
+  }
+  ]
