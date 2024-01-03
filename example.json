@@ -1,0 +1,38 @@
+[
+    {
+    "name": "Facebook",
+    "image": "https://i.imgur.com/XzcGA43.png",
+    "type": "Likes",
+    "number": 26475
+  },
+  {
+    "name": "Youtube",
+    "image": "https://i.imgur.com/e9HNjvZ.png",
+    "type": "Subscribers",
+    "number": 13911
+  },
+  {
+    "name": "Instagram",
+    "image": "https://i.imgur.com/LzM1E90.png",
+    "type": "Followers",
+    "number": 6524
+  },
+  {
+    "name": "TikTok",
+    "image": "https://i.imgur.com/p1kRGiq.png",
+    "type": "Followers",
+    "number": 5093
+  },
+  {
+    "name": "Linkedin",
+    "image": "https://i.imgur.com/I0tYslJ.png",
+    "type": "Followers",
+    "number": 1765
+  },
+  {
+    "name": "Twitter",
+    "image": "https://i.imgur.com/3tYOLpe.png",
+    "type": "Followers",
+    "number": 45322
+  }
+  ]
