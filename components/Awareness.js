@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
-function Growth() {
+function Awareness() {
 
   function generateRandomNumber(min, max) {
     // Ensure the min and max are integers and min is less than max
@@ -53,9 +53,9 @@ function Growth() {
   };
 
   return (
-    <div className='mt-5 text-black '>
-      <h1 className='text-black text-xl font-bold mb-8'>Awareness</h1>
-      <table className="w-full text-left">
+    <div className=' text-black bg-neutral-100 w-full h-full p-2 '>
+      <h1 className='text-black text-xl font-bold mb-8 bg-white p-4 my-2 rounded-md shadow-md '>Awareness (Last 6 Months)</h1>
+      <table className="w-full text-left  rounded-md shadow-md text-center bg-white">
         <thead>
           <tr>
             <th className="px-2">Metric</th> {/* Add horizontal padding */}
@@ -65,29 +65,35 @@ function Growth() {
                 {index < lastsixmonths.length - 1 && <th className="px-2">(+/-)</th>}
               </>
             ))}
-            <th className="px-2">(+/-)</th>
+            <th className="px-2">Annual Change %</th>
           </tr>
         </thead>
         <tbody>
-          {yheaders.map((header, index) => {
-            const dataRow = createDataRow(header);
-            return (
-              <tr key={header}>
-                <td className="px-2">{header}</td>
-                {dataRow.map((value, valueIndex) => (
-                  <>
-                    <td key={`value-${valueIndex}`} className="px-2">{value}</td>
-                    {valueIndex < dataRow.length - 1 && (
-                      <td key={`caret-${valueIndex}`} className="px-2">
-                        {renderChangeCaret(dataRow[valueIndex + 1], value)}
-                      </td>
-                    )}
-                  </>
-                ))}
-                <td className="px-2">
-                  {Math.round(((dataRow[dataRow.length - 1] - dataRow[0]) / dataRow[0]) * 100)}%
-                </td>
-              </tr>
+        {yheaders.map((header, index) => {
+    const dataRow = createDataRow(header);
+    const annualChange = Math.round(((dataRow[dataRow.length - 1] - dataRow[0]) / dataRow[0]) * 100);
+    const annualChangeClass = annualChange >= 0 ? 'text-green-500' : 'text-red-500';
+
+    return (
+      <tr key={header}>
+        <td className="px-2">{header}</td>
+        {dataRow.map((value, valueIndex) => {
+          const elements = [
+            <td key={`value-${valueIndex}`} className="px-2">{value}</td>
+          ];
+          if (valueIndex < dataRow.length - 1) {
+            elements.push(
+              <td key={`caret-${valueIndex}`} className="px-2">
+                {renderChangeCaret(dataRow[valueIndex + 1], value)}
+              </td>
+            );
+          }
+          return elements;
+        })}
+        <td className={`px-2 ${annualChangeClass}`}>
+          {annualChange}%
+        </td>
+      </tr>
             );
           })}
         </tbody>
@@ -96,4 +102,4 @@ function Growth() {
   );
 }
 
-export default Growth;
+export default Awareness;

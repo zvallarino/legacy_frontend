@@ -33,16 +33,24 @@ const LineChart = () => {
     ],
   };
 
+  
+
   const options = {
     scales: {
       x: {
         grid: {
           display: false // Hides X-axis grid lines
+        },
+        ticks: {
+          display: false // Hides X-axis labels
         }
       },
       y: {
         grid: {
           display: false // Hides Y-axis grid lines
+        },
+        ticks: {
+          display: false // Hides X-axis labels
         }
       }
     },

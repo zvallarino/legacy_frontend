@@ -1,0 +1,74 @@
+[
+    {
+      "name": "Facebook",
+      "number_of_users": "2.8 billion", 
+      "daily_users": "1.84 billion", 
+      "major_demographic": "25-34 year olds",
+      "type_of_content": "Posts, Photos, Videos",
+      "founder": "Mark Zuckerberg",
+      "year_founded": 2004,
+      "headquarters": "Menlo Park, California, United States",
+      "parent_company": "Meta Platforms",
+      "image": "https://i.imgur.com/XzcGA43.png" 
+    },
+    {
+      "name": "YouTube",
+      "number_of_users": "2 billion", 
+      "daily_users": "30 million", 
+      "major_demographic": "15-35 year olds",
+      "type_of_content": "Videos, Live Streams",
+      "founder": "Steve Chen, Chad Hurley, Jawed Karim",
+      "year_founded": 2005,
+      "headquarters": "San Bruno, California, United States",
+      "parent_company": "Google LLC",
+      "image": "https://i.imgur.com/LRbXtr0.png"
+    },
+    {
+      "name": "Instagram",
+      "number_of_users": "1 billion", 
+      "daily_users": "500 million", 
+      "major_demographic": "18-34 year olds",
+      "type_of_content": "Photos, Videos, Stories",
+      "founder": "Kevin Systrom, Mike Krieger",
+      "year_founded": 2010,
+      "headquarters": "Menlo Park, California, United States",
+      "parent_company": "Meta Platforms",
+      "image": "https://i.imgur.com/LzM1E90.png" 
+    },
+    {
+      "name": "TikTok",
+      "number_of_users": "1 billion", 
+      "daily_users": "Not Publicly Available",
+      "major_demographic": "16-24 year olds",
+      "type_of_content": "Short-form Videos",
+      "founder": "Zhang Yiming",
+      "year_founded": 2016,
+      "headquarters": "Beijing, China",
+      "parent_company": "ByteDance",
+      "image": "https://i.imgur.com/p1kRGiq.png" 
+    },
+    {
+      "name": "LinkedIn",
+      "number_of_users": "774 million", 
+      "daily_users": "Not Publicly Available",
+      "major_demographic": "25-34 year olds",
+      "type_of_content": "Professional Networking",
+      "founder": "Reid Hoffman",
+      "year_founded": 2003,
+      "headquarters": "Sunnyvale, California, United States",
+      "parent_company": "Microsoft Corporation",
+      "image": "https://i.imgur.com/I0tYslJ.png" 
+    },
+    {
+      "name": "X (formerly Twitter)",
+      "number_of_users": "330 million", 
+      "daily_users": "187 million", 
+      "major_demographic": "18-29 year olds",
+      "type_of_content": "Text-based Posts",
+      "founder": "Jack Dorsey",
+      "year_founded": 2006,
+      "headquarters": "San Francisco, California, United States",
+      "parent_company": "Not Publicly Available",
+      "image": "https://i.imgur.com/Qt30Rq2.png" 
+    }
+  ]
