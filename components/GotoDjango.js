@@ -8,8 +8,6 @@ export default function GotoDjango() {
     const router = useRouter();
 
   const handleClick = () => {
-    // Redirect to Django URL
-    // window.location.href = 'http://127.0.0.1:8000/';
     const pathname = router.pathname;
     router.push('http://127.0.0.1:8000/');
   };
