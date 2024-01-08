@@ -1,0 +1,163 @@
+{
+    "Sex": [
+      {
+        "Subreddit": "sex",
+        "Description": "A sex-positive community for open discussions about sexual experiences, health, relationships, and education.",
+        "Subscribers": 2400000
+      },
+      {
+        "Subreddit": "sexeducation",
+        "Description": "Providing accurate and comprehensive sex education, promoting healthy attitudes, and discussing related topics.",
+        "Subscribers": 14800
+      },
+      {
+        "Subreddit": "asexuality",
+        "Description": "Those who identify as asexual.",
+        "Subscribers": 195000
+      },
+      {
+        "Subreddit": "TwoXChromosomes",
+        "Description": "Women to share their experiences, thoughts, and perspectivesy.",
+        "Subscribers": 13500000
+      },
+      {
+        "Subreddit": "AskWomen",
+        "Description": "Ask women about their experiences, opinions, and perspectives.",
+        "Subscribers": 5300000
+      }
+    ],
+    "Sexual Diseases": [
+      {
+        "Subreddit": "STD",
+        "Description": "Sexually transmitted diseases, sharing experiences, and seeking advice in a supportive environment.",
+        "Subscribers": 25900
+      },
+      {
+        "Subreddit": "Herpes",
+        "Description": "Support, information, and resources for people affected by herpes and promoting awareness about the virus.",
+        "Subscribers": 35700
+      },
+      {
+        "Subreddit": "hivaids",
+        "Description": "HIV/AIDS, offering support, sharing news, and raising awareness about prevention and treatment.",
+        "Subscribers": 12700
+      },
+      {
+        "Subreddit": "HPV",
+        "Description": "The human papillomavirus (HPV), its implications, prevention, and treatment options.",
+        "Subscribers": 15100
+      },
+      {
+        "Subreddit": "AskDocs",
+        "Description": "Ask medical questions and receive general advice and information from healthcare professionals.",
+        "Subscribers": 482000
+      }
+    ],
+    "Contraceptives": [
+      {
+        "Subreddit": "birthcontrol",
+        "Description": "A place to discuss birth control methods.",
+        "Subscribers": 115000
+      },
+      {
+        "Subreddit": "Nexplanon",
+        "Description": "Questions about Nexplanon birth control.",
+        "Subscribers": 10800
+      },
+      {
+        "Subreddit": "childfree",
+        "Description": "Discussion topics and links of interest to childfree individuals.",
+        "Subscribers": 1500000
+      },
+      {
+        "Subreddit": "FAMnNFP",
+        "Description": "Fertility awareness methods (FAM) and natural family planning (NFP).",
+        "Subscribers": 10600
+      },
+      {
+        "Subreddit": "NuvaRing",
+        "Description": "NuvaRing related",
+        "Subscribers": 2800
+      }
+    ],"Gender": [
+        {
+          "Subreddit": "LGBT",
+          "Description": "Discussing and celebrating LGBTQ+ experiences, culture, and news.",
+          "Subscribers": 1000000
+        },
+        {
+          "Subreddit": "asklgbt",
+          "Description": "Ask questions related to LGBTQ+ topics.",
+          "Subscribers": 27400
+        },
+        {
+          "Subreddit": "Lesbian",
+          "Description": "Discussing lesbian experiences, culture, relationships, and issues.",
+          "Subscribers": 200000
+        },
+        {
+          "Subreddit": "trans",
+          "Description": "The transgender community, offering support, resources.",
+          "Subscribers": 388000
+        },
+        {
+          "Subreddit": "asktransgender",
+          "Description": "Asking questions related to transgender ",
+          "Subscribers": 267000
+        }
+      ],
+      "Africa": [
+        {
+          "Subreddit": "Egypt",
+          "Description": "The Nile River, the birthplace of civilization, and the home of the ancient Pharaohs.",
+          "Subscribers": 187000
+        },
+        {
+          "Subreddit": "Nigeria",
+          "Description": "All things related to Nigeria.",
+          "Subscribers": 93330
+        },
+        {
+          "Subreddit": "Morocco",
+          "Description": "News and all things related to Morocco.",
+          "Subscribers": 114000
+        },
+        {
+          "Subreddit": "South Africa",
+          "Description": "Dedicated to South Africa.",
+          "Subscribers": 206000
+        },
+        {
+          "Subreddit": "Kenya",
+          "Description": "the East African nation of Kenya.",
+          "Subscribers": 98700
+        }
+      ],
+      "Climate Change": [
+        {
+          "Subreddit": "climate",
+          "Description": "Climate-related news, scientific research, and policy developments.",
+          "Subscribers": 90000
+        },
+        {
+          "Subreddit": "climatechange",
+          "Description": "Science, impacts, and policy implications of climate change.",
+          "Subscribers": 55000
+        },
+        {
+          "Subreddit": "ClimateActionPlan",
+          "Description": "Practical solutions to combat climate change.",
+          "Subscribers": 23000
+        },
+        {
+          "Subreddit": "ZeroWaste",
+          "Description": "Living a more sustainable and environmentally friendly lifestyle.",
+          "Subscribers": 350000
+        },
+        {
+          "Subreddit": "Green",
+          "Description": "Environmental news, green living, and sustainable development.",
+          "Subscribers": 45000
+        }
+      ]
+    }
