@@ -4,14 +4,24 @@ import React from "react";
 import exampleData from "../example.json";
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
+
 
 function Followers() {
   const [data, setData] = useState(exampleData);
+
+  const router = useRouter();
+
+  const handleClick = (objecX) => {
+    const pathname = router.pathname;
+    router.push(objecX.link);
+  };
+
   
 
   const boxCreator = () =>
   data.map((singleObject, index) => (
-    <div key={singleObject.id || index} className="flex flex-col border-2 p-4 items-center justify-center h-1/2 m-2 rounded-md shadow-md bg-white hover:bg-blue-100 transition-colors duration-150" style={{ width: '250px', height: '200px' }}>      <div className="flex justify-center items-center w-full h-3/4">
+    <div key={singleObject.id || index} className="flex flex-col border-2 p-4 items-center justify-center h-1/2 m-2 rounded-md shadow-md bg-white hover:bg-blue-100 transition-colors duration-150" style={{ width: '250px', height: '200px' }}>      <div  onClick={() => handleClick(singleObject)} className="flex justify-center items-center w-full h-3/4">
         <Image
           src={singleObject.image}
           alt={singleObject.type}

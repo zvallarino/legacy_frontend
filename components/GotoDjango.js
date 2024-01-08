@@ -13,6 +13,11 @@ export default function GotoDjango() {
     router.push('http://127.0.0.1:8000/');
   };
 
+  const handleOtherClick = () => {
+    router.push('/Scrapper');
+};
+
+
   return (
     <div className="bg-neutral-100 w-full h-full flex flex-col items-center">
         <button 
@@ -34,6 +39,7 @@ export default function GotoDjango() {
         </div>
 
         <div 
+          onClick={handleOtherClick}
             className='text-xl font-bold text-black bg-white text-center mt-4 p-2 rounded-md shadow-md w-1/2 hover:bg-blue-100 cursor-pointer'>
             Click Here
         </div>

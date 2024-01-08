@@ -7,7 +7,7 @@ import LineChart from "./LineChart";
 function Engaged() {
   const [timeRange, setTimeRange] = useState("7d");
   const [dateRange, setDateRange] = useState("");
-  const [current, setCurrent] = useState([19,878,8391834, 16,896,7636569]);
+  const [current, setCurrent] = useState([82577,8391834, 70190,7636569]);
  
 
   useEffect(() => {
@@ -24,47 +24,47 @@ function Engaged() {
     let prevImpression;
     switch (timeRange) {
       case "1d":
-        currentEngaged = 19878 / 365;
+        currentEngaged = 82577 / 365;
         currentImpression = 8391834 / 365;
 
-        prevEngaged = 19878 / 365 * .85
+        prevEngaged = 82577 / 365 * .85
         prevImpression = 8391834 / 365 * .91
         break;
       case "7d":
-        currentEngaged = 19878 / 52;
+        currentEngaged = 82577 / 52;
         currentImpression = 8391834 / 52;
 
-        prevEngaged = 19878 / 52 * .85
+        prevEngaged = 82577 / 52 * .85
         prevImpression = 8391834 / 52 * .91
 
         break;
       // Add cases for other time ranges
       case "1m":
-        currentEngaged = 19878 / 12;
+        currentEngaged = 82577 / 12;
         currentImpression = 8391834 / 12;
 
-        prevEngaged = 19878 / 12 * .85
+        prevEngaged = 82577 / 12 * .85
         prevImpression = 8391834 / 12 * .91
         break;
       case "3m":
-        currentEngaged = 19878 / 4;
+        currentEngaged = 82577 / 4;
         currentImpression = 8391834 / 4;
 
-        prevEngaged = 19878 / 4 * .85
+        prevEngaged = 82577 / 4 * .85
         prevImpression = 8391834 / 4 * .91
         break;
       case "1y":
-        currentEngaged = 19878;
+        currentEngaged = 82577;
         currentImpression = 8391834;
 
-        prevEngaged = 19878 * .85
+        prevEngaged = 82577 * .85
         prevImpression = 8391834 * .91
         break;
       case "all":
-        currentEngaged = 19878 * 3;
+        currentEngaged = 82577 * 3;
         currentImpression = 8391834 * 3;
 
-        prevEngaged = 19878 * 3 * .85
+        prevEngaged = 82577 * 3 * .85
         prevImpression = 8391834 * 3 * .91
         break;
       // You can add more cases for different time ranges if needed

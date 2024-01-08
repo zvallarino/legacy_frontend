@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 export default function Scrapper() {
 
   return (
-    <main className="flex-col h-screen	w-screen bg-red-400">
+    <main className="flex-col h-screen	w-screen bg-neutral-100">
 
         {/* toolbar */}
         <Toolbar />
@@ -22,7 +22,7 @@ export default function Scrapper() {
         {/* explaination */}
         <Explaination />
         {/* squares */}
-        <div><Boxes /></div>
+          <Boxes />
      
     </main>
   )
