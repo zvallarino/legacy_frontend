@@ -3,36 +3,42 @@
     "name": "Facebook",
     "image": "https://i.imgur.com/XzcGA43.png",
     "type": "Likes",
-    "number": 26475
+    "number": 27432,
+    "link": "https://www.facebook.com/popcouncil/"
   },
   {
     "name": "Youtube",
-    "image": "https://i.imgur.com/e9HNjvZ.png",
+    "image": "https://i.imgur.com/LRbXtr0.png",
     "type": "Subscribers",
-    "number": 13911
+    "number": 541,
+    "link": "https://www.youtube.com/user/PopulationCouncil"
   },
   {
     "name": "Instagram",
     "image": "https://i.imgur.com/LzM1E90.png",
     "type": "Followers",
-    "number": 6524
+    "number": 6524, 
+    "link": "https://www.instagram.com/explore/locations/91214969/the-population-council/?hl=en"
   },
   {
     "name": "TikTok",
     "image": "https://i.imgur.com/p1kRGiq.png",
     "type": "Followers",
-    "number": 5093
+    "number": 5093, 
+    "link": "https://www.facebook.com/popcouncil/"
   },
   {
     "name": "Linkedin",
     "image": "https://i.imgur.com/I0tYslJ.png",
     "type": "Followers",
-    "number": 1765
+    "number": 19235,
+    "link": "https://www.linkedin.com/company/population-council/"
   },
   {
     "name": "Twitter",
     "image": "https://i.imgur.com/Qt30Rq2.png",
     "type": "Followers",
-    "number": 45322
+    "number": 23734,
+    "link": "https://twitter.com/Pop_Council"
   }
   ]

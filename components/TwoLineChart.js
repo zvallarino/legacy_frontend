@@ -4,11 +4,12 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+
 const TwoLineChart = () => {
   const generateOrderedDates = (start, numPoints) => {
     const dates = [];
-    const oneDayInMs = 24 * 60 * 60 * 1000; // milliseconds in a day
-    const timeBetween = 90 / (numPoints - 1) * oneDayInMs; // time between points in 90-day range
+    const oneDayInMs = 24 * 60 * 60 * 1000;
+    const timeBetween = 90 / (numPoints - 1) * oneDayInMs;
 
     for (let i = 0; i < numPoints; i++) {
       const date = new Date(start.getTime() + timeBetween * i);
@@ -18,26 +19,31 @@ const TwoLineChart = () => {
     return dates;
   };
 
-  const startDate = new Date(); // Current date
-  const numPoints = 18; // Number of data points
-
+  const startDate = new Date();
+  const numPoints = 18;
   const labels = generateOrderedDates(startDate, numPoints);
+
+  const firstDataset = Array(numPoints).fill().map(() => Math.random() * 5000);
+  const average = firstDataset.reduce((sum, value) => sum + value, 0) / numPoints;
 
   const data = {
     labels,
     datasets: [
       {
-        // First dataset (Blue)
-        data: Array(numPoints).fill().map(() => Math.random() * 100), // Random data points
+        label: 'Daily Reach', // Label for the blue line
+        data: firstDataset,
         fill: true,
         backgroundColor: 'rgba(75,192,192,0.2)',
         borderColor: 'rgba(75,192,192,1)',
+        pointBackgroundColor: 'rgba(75,192,192,1)', // Color of points
       },
       {
-        // Second dataset (Red)
-        data: Array(numPoints).fill().map(() => Math.random() * 100), // Random data points
-        fill: false, // No fill for the second dataset
-        borderColor: 'red', // Red line
+        label: 'Average Reach', // Label for the red line
+        data: Array(numPoints).fill(average),
+        fill: false,
+        borderColor: 'red',
+        borderWidth: 2, // Making the line thinner
+        pointRadius: 0, // Removing the points from the line
       }
     ],
   };
@@ -46,18 +52,18 @@ const TwoLineChart = () => {
     scales: {
       x: {
         grid: {
-          display: false // Hides X-axis grid lines
+          display: false
         }
       },
       y: {
         grid: {
-          display: false // Hides Y-axis grid lines
+          display: false
         }
       }
     },
     plugins: {
       legend: {
-        display: false // Hides the legend
+        display: true // Enabling the legend
       }
     }
   };

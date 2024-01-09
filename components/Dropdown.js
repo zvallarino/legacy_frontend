@@ -2,13 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillCaretDown } from 'react-icons/ai';
 
-const Dropdown = ({timeRange, setTimeRange}) => {
-    // Default value
-
-    
+const Dropdown = ({ timeRange, setTimeRange }) => {
     const [isOpen, setIsOpen] = useState(false); // State to track if dropdown is open
-
-    
 
     const options = [
         { value: '1d', label: '1 Day' },
@@ -29,12 +24,12 @@ const Dropdown = ({timeRange, setTimeRange}) => {
     };
 
     return (
-        <div style={{ position: 'relative', border: '1px solid black', display: 'inline-block' }} className='text-black'>
+        <div style={{ position: 'relative', border: '1px solid black', display: 'inline-block', borderRadius: '8px' }} className='text-black '>
             <select
                 value={timeRange}
                 onChange={handleChange}
                 onClick={handleDropdown}
-                style={{ border: 'none', appearance: 'none', padding: '5px', width: '100%' }}
+                style={{ border: 'none', appearance: 'none', padding: '5px', width: '100%', borderRadius: '8px' }} // Added borderRadius here
             >
                 {options.map(option => (
                     <option key={option.value} value={option.value}>

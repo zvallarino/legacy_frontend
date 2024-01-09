@@ -1,0 +1,25 @@
+[    {
+    "name": "LinkedIn",
+    "number_of_users": "774 million", 
+    "daily_users": "Not Publicly Available",
+    "major_demographic": "25-34 year olds",
+    "type_of_content": "Professional Networking",
+    "founder": "Reid Hoffman",
+    "year_founded": 2003,
+    "headquarters": "Sunnyvale, California, United States",
+    "parent_company": "Microsoft Corporation",
+    "image": "https://i.imgur.com/I0tYslJ.png" 
+  },
+  
+  {
+    "name": "YouTube",
+    "number_of_users": "2 billion", 
+    "daily_users": "30 million", 
+    "major_demographic": "15-35 year olds",
+    "type_of_content": "Videos, Live Streams",
+    "founder": "Steve Chen, Chad Hurley, Jawed Karim",
+    "year_founded": 2005,
+    "headquarters": "San Bruno, California, United States",
+    "parent_company": "Google LLC",
+    "image": "https://i.imgur.com/LRbXtr0.png"
+  }]
