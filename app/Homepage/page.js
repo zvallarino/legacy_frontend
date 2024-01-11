@@ -16,7 +16,7 @@ export default function HopePage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24  bg-neutral-100">
         <button className="px-5 py-2.5 text-2xl font-bold text-white bg-red-500 border border-white rounded-full cursor-pointer shadow-lg" onClick={handleClick}>
           GO
         </button>

@@ -1,23 +1,29 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-function Buttons({show, setShow}) {
-    const buttons = ["Top Subreddits", "PopCo Tables", "General Search"];
+function ButtonsGeneral({show, setShow}) {
+    const buttons = ["Communities", "Posts", "Comments", "People", "Go Back"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
     
+
     function handleClick(e, i) {
         e.preventDefault();
         console.log('The link was clicked.');
         
-        
         if (i == 0) {
-            setShow(true);
-        } else if (i == 1) {
-            setShow(false);
-        } else if (i == 2) {
             router.push('http://localhost:3000/subreddit');
-            // send to http://localhost:3000/subreddit
+        
+        } else if (i == 1) {
+            router.push('http://localhost:3000/general');
+    
+        } else if (i == 2) {
+            router.push('http://localhost:3000/comment');
+    
+        } else if (i == 3) {
+            router.push('http://localhost:3000/person');
+        }else if (i == 4) {
+            router.push('http://localhost:3000/Scrapper');
         }
     }
     const buttonsMap = () => buttons.map((button, index) => {
@@ -38,4 +44,4 @@ function Buttons({show, setShow}) {
     );
 }
 
-export default Buttons;
+export default ButtonsGeneral;

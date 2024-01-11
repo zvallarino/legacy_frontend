@@ -5,7 +5,14 @@ const nextConfig = {
         {
           protocol: 'https',
           hostname: 'i.imgur.com',
-          
+        },
+        {
+          protocol: 'https',
+          hostname: 'b.thumbs.redditmedia.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.redditstatic.com',
         },
       ],
     },

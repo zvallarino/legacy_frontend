@@ -1,8 +1,10 @@
+
 import React from 'react';
 import Rows from './Rows';
 
-function Table({ table }) {
-    const headers = ["Rank", "Subreddit", "Number"]; // Updated headers
+function TableTL({ table }) {
+    const headers =
+    ["name", "description", "subscribers"] 
 
     return (
         <div className="border-collapse border border-gray-400 rounded-lg mx-4 my-2 shadow-md">
@@ -19,4 +21,4 @@ function Table({ table }) {
     );
 }
 
-export default Table;
+export default TableTL;
