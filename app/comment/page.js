@@ -1,11 +1,8 @@
 "use client"
 
 
-import Buttons from '@/components/reddithome/Buttons';
-import Tables from '@/components/reddithome/Tables';
-import Toplist from '@/components/reddithome/Toplist';
-import Boxes from '@/components/scrapper/Boxes';
-import Explaination from '@/components/scrapper/Explaination';
+import CommentSearch from '@/components/comment/CommentSearch';
+import ButtonsGeneral from '@/components/reddithome/ButtonsGeneral';
 import Header from '@/components/scrapper/Header';
 import Toolbar from '@/components/scrapper/Toolbar';
 import { useRouter } from 'next/navigation';
@@ -26,11 +23,10 @@ export default function Scrapper() {
         <Header />
         
         {/* Buttons */}
-        <div className='' onClick={()=>setShow(!show)}><Buttons /></div>
-      
+        <ButtonsGeneral />
 
         {/* Pop Council Tables*/}
-        <div className='text-black'>{show?<Tables />:<Toplist />}</div>
+        <div className='text-black bg-neutral-100'><CommentSearch /></div>
       
         
     </main>

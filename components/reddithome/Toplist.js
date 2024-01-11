@@ -1,8 +1,10 @@
 import React from 'react';
 import tabledata from "../../subreddits.json";
 import Table from './Table';
+import TableTL from './TableTL';
 
-function Tables({ categories }) {
+function Toplist({ categories }) {
+    console.log(categories);
     const tableElements = [];
 
     categories.forEach((category, index) => {
@@ -11,7 +13,7 @@ function Tables({ categories }) {
             tableElements.push(
                 <div key={category.id} className="w-1/3 p-2">
                     <h1 className='text-2xl text-black ml'>{category.name}</h1>
-                    <Table table={category.subreddits} />
+                    <TableTL table={category.subreddits} />
                 </div>
             );
         }
@@ -20,4 +22,4 @@ function Tables({ categories }) {
     return <div className="flex flex-wrap">{tableElements}</div>;
 }
 
-export default Tables;
+export default Toplist;
