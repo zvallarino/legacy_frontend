@@ -17,12 +17,23 @@
 }
 
 body {
+  @apply bg-neutral-100; /* Apply Tailwind's bg-neutral-100 */
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* Remove the linear-gradient background if you want just bg-neutral-100 */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
+.red {
+  color: red;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 11px;
+  display: none; 
+}

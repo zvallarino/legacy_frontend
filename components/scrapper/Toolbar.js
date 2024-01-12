@@ -15,13 +15,17 @@ function Toolbar() {
 };
 
 const goBackHome = () => {
-  router.push('/');
+  router.push('http://localhost:3000/general');
+};
+
+const goTop = () => {
+  router.push('http://localhost:3000/Scrapper');
 };
 
   
   return (
     <div className="bg-gray-800 py-4 px-6 flex justify-between items-center h-auto">
-    <div className="text-white text-lg font-bold">Toolbar</div>
+    <div  onClick={goTop} className="text-white text-lg font-bold">Top Charts</div>
     <div className="flex space-x-4">
         <button
          onClick={handleClick} 
@@ -31,7 +35,7 @@ const goBackHome = () => {
         className="text-white hover:text-gray-300">Next</button>
         <button
         onClick={goBackHome}
-        className="text-white hover:text-gray-300">Button 3</button>
+        className="text-white hover:text-gray-300">General Search</button>
     </div>
 </div>
   )

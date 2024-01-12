@@ -14,12 +14,16 @@ ChartJS.register(
   Legend
 );
 
+
+function Graph({currentName}) {
+
+  
 // Sample data
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   datasets: [
     {
-      label: 'Sample Dataset',
+      label: 'Posts over time',
       data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56, 55, 40],
       fill: true,
       backgroundColor: 'rgba(75,192,192,0.2)',
@@ -43,11 +47,19 @@ const options = {
   responsive: true,
   plugins: {
     legend: {
-      display: true, // Set to false to hide the legend
+      display: true,
+      labels: {
+        font: {
+          size: 18 // Set the font size here
+        }
+      }
     },
     title: {
       display: true,
-      text: 'Custom Chart Title',
+      text: `Graph of ${currentName || "Subreddit"}`,
+      font: {
+        size: 24 // Double the size of the title font
+      }
     },
   },
   scales: {
@@ -57,11 +69,12 @@ const options = {
   },
 };
 
-function Graph() {
+
   return (
-    <div>
-      <Line data={data} options={options} />
-    </div>
+    <div style={{ width: '50%', height: 'auto', backgroundColor: 'white' }} 
+    className='p-4 rounded-lg shadow-md'>
+ <Line data={data} options={options} />
+</div>
   );
 }
 

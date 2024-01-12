@@ -1,14 +1,30 @@
 "use client"
 import React, { useState } from 'react';
-import { CiSearch } from "react-icons/ci";
+import { CiExport, CiSearch } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 import Crow from './CRow';
+import Popup from '../Search/Popup';
 
 function CommentSearch() {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [showPopup, setShowPopup] = useState(false);
+
+    
+    const handlePopupClose = () => {
+        setShowPopup(false);
+      };
+    
+      const handleExport = (type) => {
+        console.log(`Export type: ${type}`);
+        // Add your export logic here
+        handlePopupClose();
+      };
+
+
+
 
     const searchSubreddits = async () => {
         setLoading(true);
@@ -40,6 +56,11 @@ function CommentSearch() {
     return (
         <div>
           <div className= 'flex justify-center'>
+          {results.length > 0 && (
+      <div className='flex items-center border-t-2 border-b-2 border-l-2 border-gray-300 rounded-l-lg justify-center px-2 hover:bg-green-600'  onClick={() => setShowPopup(true)}>
+      <CiExport size="30" className="mx-2" /> {/* Icon */}
+  </div>
+    )}
           <form onSubmit={handleSubmit} className="flex items-center border-2 border-gray-300 rounded-lg">
         <input
             type="text"
@@ -65,6 +86,7 @@ function CommentSearch() {
 ))}
         </div>
     )}
+          <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport} />
         </div>
     );
 }

@@ -4,12 +4,12 @@
 import Buttons from '@/components/reddithome/Buttons';
 import Tables from '@/components/reddithome/Tables';
 import Toplist from '@/components/reddithome/Toplist';
-import Boxes from '@/components/scrapper/Boxes';
-import Explaination from '@/components/scrapper/Explaination';
 import Header from '@/components/scrapper/Header';
 import Toolbar from '@/components/scrapper/Toolbar';
-import { useRouter } from 'next/navigation';
 import react, { useEffect, useState } from 'react';
+import 'simplebar/dist/simplebar.min.css';
+import dynamic from 'next/dynamic';
+
 
 
 
@@ -17,6 +17,7 @@ export default function Scrapper() {
 
   const [show, setShow] = useState(true);
 
+ 
   const [categories, setCategories] = useState([]);
   const [TopPC, setTopPC] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -69,7 +70,7 @@ export default function Scrapper() {
 
 
   return (
-    <main className="flex-col h-screen	w-screen bg-neutral-100">
+    <main className="flex-col h-screen	w-screen bg-neutral-100 hide-scrollbar::-webkit-scrollbar ">
 
         {/* toolbar */}
         <Toolbar />
@@ -84,7 +85,6 @@ export default function Scrapper() {
         {/* Pop Council Tables*/}
         <div className='text-black'>{show?<Tables categories = {categories} />:<Toplist categories ={TopPC}/>}</div>
       
-        
     </main>
   )
 }

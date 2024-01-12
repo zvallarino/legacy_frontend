@@ -2,7 +2,7 @@ import React from "react";
 
 function RowsD({ post }) {
   return (
-    <div className="bg-neutral-100 p-4 shadow-lg rounded-lg flex flex-col justify-center mb-4" style={{ width: '600px', maxWidth: '100%' }}>
+    <div className="bg-white text-black p-4 shadow-lg rounded-lg flex flex-col justify-center mb-4" style={{ width: '600px', maxWidth: '100%' }}>
         <div className="flex mb-2">
             <div>{post.subreddit}</div>
             <div className="mr-2 flex justify-center items-center" style={{ width: '25px', height: '25px' }}>
