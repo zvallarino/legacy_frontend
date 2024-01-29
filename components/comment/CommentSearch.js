@@ -4,6 +4,8 @@ import { CiExport, CiSearch } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 import Crow from './CRow';
 import Popup from '../Search/Popup';
+import * as XLSX from 'xlsx';
+
 
 function CommentSearch() {
     const [query, setQuery] = useState('');
@@ -16,10 +18,20 @@ function CommentSearch() {
     const handlePopupClose = () => {
         setShowPopup(false);
       };
+
+      const exportToExcel = () => {
+        const ws = XLSX.utils.json_to_sheet([], {
+          header: ["subreddit", "username", "icon_url", "created_utc", "title", "score", "num_comments"],
+        });
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Data");
     
+        XLSX.writeFile(wb, "exported_data.xlsx");
+      };
+
       const handleExport = (type) => {
         console.log(`Export type: ${type}`);
-        // Add your export logic here
+        exportToExcel()
         handlePopupClose();
       };
 

@@ -14,7 +14,7 @@ export default function GotoDjango() {
   };
 
   const handleOtherClick = () => {
-    router.push('/Scrapper');
+    router.push('/Homepage');
 };
 
 
@@ -23,7 +23,7 @@ export default function GotoDjango() {
         <button 
             className="px-5 py-2.5 text-2xl font-bold text-black bg-white rounded-md shadow-md cursor-pointer w-full mt-4"
             onClick={handleClick}>
-            Web Scrapper
+            Web Scraper
         </button>
 
         <div 

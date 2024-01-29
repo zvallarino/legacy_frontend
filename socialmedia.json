@@ -7,7 +7,7 @@
       "type_of_content": "Posts, Photos, Videos",
       "founder": "Mark Zuckerberg",
       "year_founded": 2004,
-      "headquarters": "Menlo Park, California, United States",
+      "headquarters": "Menlo Park, California",
       "parent_company": "Meta Platforms",
       "image": "https://i.imgur.com/XzcGA43.png" ,
       "link":"http://127.0.0.1:8000/webs/under_construction/"
@@ -20,7 +20,7 @@
       "type_of_content": "Photos, Videos, Stories",
       "founder": "Kevin Systrom, Mike Krieger",
       "year_founded": 2010,
-      "headquarters": "Menlo Park, California, United States",
+      "headquarters": "Menlo Park, California",
       "parent_company": "Meta Platforms",
       "image": "https://i.imgur.com/LzM1E90.png" ,
       "link":"http://127.0.0.1:8000/webs/under_construction/"
@@ -47,10 +47,10 @@
     "type_of_content": "Forums, Posts",
     "founder": "Steve Huffman, Alexis Ohanian",
     "year_founded": 2005,
-    "headquarters": "San Francisco, California, United States",
+    "headquarters": "San Francisco, California",
     "parent_company": "Advance Publications",
     "image": "https://i.imgur.com/EYt1TZW.png",
-    "link":"reddit/"
+    "link":"Scrapper/"
     },
     {
       "name": "X (formerly Twitter)",
@@ -60,7 +60,7 @@
       "type_of_content": "Text-based Posts",
       "founder": "Jack Dorsey",
       "year_founded": 2006,
-      "headquarters": "San Francisco, California, United States",
+      "headquarters": "San Francisco, California",
       "parent_company": "X Holdings Corp",
       "image": "https://i.imgur.com/Qt30Rq2.png",
       "link":"http://127.0.0.1:8000/webs/under_construction/"
@@ -74,7 +74,7 @@
     "type_of_content": "Messaging, Voice Chat",
     "founder": "Jason Citron, Stan Vishnevskiy",
     "year_founded": 2015,
-    "headquarters": "San Francisco, California, United States",
+    "headquarters": "San Francisco, California",
     "parent_company": "Discord Inc.",
     "image": "https://i.imgur.com/VuD0dmJ.png",
     "link":"http://127.0.0.1:8000/"

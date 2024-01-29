@@ -28,7 +28,7 @@ function Header() {
                 </div>
                 <div className="title text-4xl">
                     <h1>Population Council</h1>
-                    <h1>Web Scrapper</h1>
+                    <h1>Web Scraper</h1>
                 </div>
             </div>
     </div>

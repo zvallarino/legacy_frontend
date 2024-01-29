@@ -11,6 +11,7 @@ import Sidebar from '@/components/details/Sidebar';
 import Graph from '@/components/details/Graph';
 import Posts from '@/components/details/Posts';
 import Popup from '@/components/Search/Popup';
+import * as XLSX from 'xlsx';
 
 export default function Scrapper() {
   const router = useRouter();
@@ -23,10 +24,20 @@ export default function Scrapper() {
   const handlePopupClose = () => {
       setShowPopup(false);
     };
+
+    const exportToExcel = () => {
+      const ws = XLSX.utils.json_to_sheet([], {
+        header: ["subreddit", "username", "icon_url", "created_utc", "title", "score", "num_comments"],
+      });
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Data");
+  
+      XLSX.writeFile(wb, "exported_data.xlsx");
+    };
   
     const handleExport = (type) => {
       console.log(`Export type: ${type}`);
-      // Add your export logic here
+      exportToExcel()
       handlePopupClose();
     };
 

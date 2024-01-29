@@ -17,7 +17,6 @@ function Buttons({show, setShow}) {
             setShow(false);
         } else if (i == 2) {
             router.push('http://localhost:3000/subreddit');
-            // send to http://localhost:3000/subreddit
         }
     }
     const buttonsMap = () => buttons.map((button, index) => {

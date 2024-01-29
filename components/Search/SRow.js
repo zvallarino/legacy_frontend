@@ -41,7 +41,7 @@ function SRow({ subreddit }) {
                     <div>{subreddit.name}</div>
                 </a>
             <span className="mx-2 text-lg">·</span>
-            {subreddit.subscribers.toLocaleString()}
+            {subreddit.subscribers.toLocaleString()||subreddit.number.toLocaleString()}
           </div>
           <div>{subreddit.description}</div>
         </div>

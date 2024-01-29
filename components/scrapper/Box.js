@@ -41,6 +41,10 @@ function Box({ social }) {
         <div className="py-1 font-semibold">Year Founded:</div>
         <div className="py-1">{social.year_founded}</div>
 
+        <div className="py-1 font-semibold">headquarters:</div>
+        <div className="py-1">{social.headquarters}</div>
+
+
       </div>
     </div>
   );
