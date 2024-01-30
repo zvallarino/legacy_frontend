@@ -1,11 +1,25 @@
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from '@/context/AppContext';
+import { useRouter } from 'next/navigation';
 
 function SRow({ subreddit }) {
+  
+  const { setCurrentName } = useContext(AppContext);
+  const router = useRouter();
+
+
+  const handleClick = () => {
+    const paramName = subreddit.name;
+    setCurrentName(paramName); // Set the name in the context
+    router.push(`/sr_details`);
+};
+
   return (
     <div className="bg-neutral-100 flex justify-center">
       <div
         className="flex border-2 p-4 rounded-lg bg-white shadow-md"
+        onClick = {handleClick}
         style={{ width: "500px", height: "150px", overflow: "hidden" }}
       >
         <div className="h-full flex justify-center items-center">
@@ -27,7 +41,7 @@ function SRow({ subreddit }) {
                     <div>{subreddit.name}</div>
                 </a>
             <span className="mx-2 text-lg">·</span>
-            {subreddit.subscribers.toLocaleString()}
+            {subreddit.subscribers.toLocaleString()||subreddit.number.toLocaleString()}
           </div>
           <div>{subreddit.description}</div>
         </div>

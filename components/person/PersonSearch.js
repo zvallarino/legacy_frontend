@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
 import PeopRow from './PeopRow';
 
+
 function PersonSearch() {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);

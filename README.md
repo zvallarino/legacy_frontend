@@ -35,3 +35,16 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # legacy_frontend
+
+
+Current errors
+Details
+The Details is using context thus when you refresh it goes away. It should be using the route but there was some erroring going on
+
+The Details graph is off center
+
+The Number of Subscribers and Posts is not related to the graph
+
+When you scroll, the background is black
+
+The scroll bar still exists

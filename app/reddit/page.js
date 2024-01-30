@@ -12,12 +12,16 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 
+
+
 export default function Scrapper() {
 
-  const [show, setShow] = useState(true);
 
   return (
-    <main className="flex-col h-screen	w-screen bg-neutral-100">
+
+<div className="flex-col h-screen	w-screen bg-neutral-100">
+
+
 
         {/* toolbar */}
         <Toolbar />
@@ -31,8 +35,10 @@ export default function Scrapper() {
 
         {/* Pop Council Tables*/}
         <div className='text-black'>{show?<Tables />:<Toplist />}</div>
-      
-        
-    </main>
+
+
+
+    </div>
+
   )
 }

@@ -17,17 +17,25 @@ function Buttons({show, setShow}) {
             setShow(false);
         } else if (i == 2) {
             router.push('http://localhost:3000/subreddit');
-            // send to http://localhost:3000/subreddit
         }
     }
     const buttonsMap = () => buttons.map((button, index) => {
+        let roundedClass = "";
+        if (index === 0) {
+            roundedClass = "rounded-l-lg"; // Round left corners for the first button
+        } else if (index === buttons.length - 1) {
+            roundedClass = "rounded-r-lg"; // Round right corners for the last button
+        }
+    
         return (
-            <div key={index} onClick={e => handleClick(e,index)} className="text-xl p-4 hover:bg-gray-600">
-                
+            <div key={index} 
+                 onClick={e => handleClick(e, index)} 
+                 className={`text-xl p-4 hover:bg-gray-500 ${roundedClass}`}>
                 {button}
             </div>
         );
     });
+    
 
     return (
         <div className='flex justify-center rounded-lg m-2'>

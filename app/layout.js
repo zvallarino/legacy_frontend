@@ -8,9 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   const [currentName, setCurrentName] = useState('');
+  const [postInfo, setPostInfo] = useState(true);
 
   return (
-    <AppContext.Provider value={{ currentName, setCurrentName }}>
+    <AppContext.Provider value={{ currentName, setCurrentName, postInfo, setPostInfo }}>
       <html lang="en">
         <body className={inter.className}>{children}</body>
       </html>
