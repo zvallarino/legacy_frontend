@@ -36,12 +36,12 @@ function PostSearch() {
       };
 
 
-    const searchSubreddits = async () => {
+    const searchPosts = async () => {
         setLoading(true);
         setError(null);
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/post/?q=${query}`);
+            const response = await fetch(`http://127.0.0.1:8000/search_app/search_posts/?q=${query}`);
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
@@ -59,7 +59,7 @@ function PostSearch() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (query) {
-            searchSubreddits();
+            searchPosts();
         }
     };
 
