@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 export default function Homepage() {
 
-
+  const [show, setShow] = useState(false)
   return (
 
 <div className="flex-col h-screen	w-screen bg-neutral-100">
@@ -27,7 +27,7 @@ export default function Homepage() {
         <Header />
         
         {/* Buttons */}
-        <div className='' onClick={()=>setShow(!show)}><Buttons /></div>
+        <div className='' onClick={()=>setShow(!show)}><Buttons show ={show} setShow ={setShow} /></div>
       
 
         {/* Pop Council Tables*/}
