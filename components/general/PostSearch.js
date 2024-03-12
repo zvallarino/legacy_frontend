@@ -12,19 +12,40 @@ function PostSearch() {
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
-
+    const [allresults, setAllResults ] = useState('');
     
     const handlePopupClose = () => {
         setShowPopup(false);
       };
 
       const exportToExcel = () => {
-        const ws = XLSX.utils.json_to_sheet([], {
-          header: ["subreddit", "username", "icon_url", "created_utc", "title", "score", "num_comments"],
+
+        const formattedResults = allresults.map(post => ({
+            ...post,
+            created_utc: (post.created_utc / 86400) + 25569 // Format as 'YYYY-MM-DD HH:MM:SS'
+          }));
+        // Truncate text to a maximum of 32767 characters
+        const truncatedResults = formattedResults.map(post => {
+          const truncatedPost = {};
+          for (const key in post) {
+            if (typeof post[key] === 'string') {
+              truncatedPost[key] = post[key].slice(0, 32767);
+            } else {
+              truncatedPost[key] = post[key];
+            }
+          }
+          return truncatedPost;
         });
+
+        
+      
+        const ws = XLSX.utils.json_to_sheet(truncatedResults, {
+          header: ["title", "selftext", "praw_id", "upvote_ratio", "view_count", "url", "permalink", 'score', "category", 'num_comments', 'num_crossposts', "comment_limit", "num_reports", "domain", "is_self", "is_video", "media_only", 'created_utc','author', 'subreddit','subreddit_icon', "over_18"],
+        });
+
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Data");
-    
+      
         XLSX.writeFile(wb, "exported_data.xlsx");
       };
 
@@ -46,8 +67,8 @@ function PostSearch() {
                 throw new Error(`Error: ${response.status}`);
             }
             const data = await response.json();
-            setResults(data);
-            console.log(data)
+            setResults(data['results_show']);
+            setAllResults(data['results_all']);
         } catch (error) {
             console.error('There was an error fetching the search results:', error);
             setError(error.message);
