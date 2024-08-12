@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { CiExport, CiSearch } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import Prow from './PRow';
 import Popup from '../Search/Popup';
 import * as XLSX from 'xlsx';
+import Qrow from './QRow';
 
-function PostSearch() {
+function QSearch() {
     const [query, setQuery] = useState('');
     const [results, setResults] = useState([]);
     const [isLoading, setLoading] = useState(false);
@@ -70,7 +70,7 @@ function PostSearch() {
         setError(null);
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/search_app/search_posts/?q=${query}`);
+            const response = await fetch(`http://127.0.0.1:8000/search_app/quick_search/?q=${query}`);
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
@@ -93,49 +93,47 @@ function PostSearch() {
     };
 
     return (
-      <div>
-          <div className='flex justify-center'>
-              {results.length > 0 && (
-                  <div className='flex items-center border-t-2 border-b-2 border-l-2 border-gray-300 rounded-l-lg justify-center px-2 hover:bg-green-600' onClick={() => setShowPopup(true)}>
-                      <CiExport size="30" className="mx-2" />
-                  </div>
-              )}
-              <form onSubmit={handleSubmit} className="flex items-center border-2 border-gray-300 rounded-lg">
-                  <input
-                      type="text"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      placeholder="Search Posts"
-                      className="w-96 h-12 px-4 text-lg"
-                  />
-                  <div className="border-l h-8 border-gray-300 mx-2"></div>
-                  <button type="submit" className="pr-4">
-                      <CiSearch size="30" />
-                  </button>
-              </form>
-          </div>
-          
-          <div className="flex flex-col items-center mt-4">
-              {isLoading ? (
-                  <div className="flex justify-center items-center h-32">
-                      <AiOutlineLoading3Quarters className="animate-spin text-4xl text-blue-500" />
-                  </div>
-              ) : error ? (
-                  <div className="text-red-500">Error: {error}</div>
-              ) : results.length > 0 ? (
-                  <div className="w-full">
-                      {results.map((subreddit, index) => (
-                          <div key={index} className="flex justify-center mb-4">
-                              <Prow post={subreddit} />
-                          </div>
-                      ))}
-                  </div>
-              ) : null}
-          </div>
-          
-          <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport} />
-      </div>
-  );
+        <div>
+        <div className='flex justify-center'>
+            {results.length > 0 && (
+                <div className='flex items-center border-t-2 border-b-2 border-l-2 border-gray-300 rounded-l-lg justify-center px-2 hover:bg-green-600' onClick={() => setShowPopup(true)}>
+                    <CiExport size="30" className="mx-2" />
+                </div>
+            )}
+            <form onSubmit={handleSubmit} className="flex items-center border-2 border-gray-300 rounded-lg">
+                <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search Posts"
+                    className="w-96 h-12 px-4 text-lg"
+                />
+                <div className="border-l h-8 border-gray-300 mx-2"></div>
+                <button type="submit" className="pr-4">
+                    <CiSearch size="30" />
+                </button>
+            </form>
+        </div>
+        
+        <div className="flex flex-col items-center mt-4">
+            {isLoading ? (
+                <div className="flex justify-center items-center h-32">
+                    <AiOutlineLoading3Quarters className="animate-spin text-4xl text-blue-500" />
+                </div>
+            ) : error ? (
+                <div className="text-red-500">Error: {error}</div>
+            ) : results.length > 0 ? (
+                results.map((subreddit, index) => (
+                    <div key={index} className="w-full flex justify-center mb-4">
+                        <Qrow post={subreddit} />
+                    </div>
+                ))
+            ) : null}
+        </div>
+        
+        <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport} />
+    </div>
+    );
 }
 
-export default PostSearch;
+export default QSearch;

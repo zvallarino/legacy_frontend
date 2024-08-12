@@ -1,84 +1,82 @@
 [
     {
-      "name": "Facebook",
-      "number_of_users": "2.8 billion", 
-      "daily_users": "1.84 billion", 
-      "major_demographic": "25-34 year olds",
-      "type_of_content": "Posts, Photos, Videos",
-      "founder": "Mark Zuckerberg",
-      "year_founded": 2004,
-      "headquarters": "Menlo Park, California",
-      "parent_company": "Meta Platforms",
-      "image": "https://i.imgur.com/XzcGA43.png" ,
-      "link":"http://127.0.0.1:8000/webs/under_construction/"
-    },
-    {
-      "name": "Instagram",
-      "number_of_users": "1 billion", 
-      "daily_users": "500 million", 
-      "major_demographic": "18-34 year olds",
-      "type_of_content": "Photos, Videos, Stories",
-      "founder": "Kevin Systrom, Mike Krieger",
-      "year_founded": 2010,
-      "headquarters": "Menlo Park, California",
-      "parent_company": "Meta Platforms",
-      "image": "https://i.imgur.com/LzM1E90.png" ,
-      "link":"http://127.0.0.1:8000/webs/under_construction/"
-    },
-    {
-      "name": "TikTok",
-      "number_of_users": "1 billion", 
-      "daily_users": "Not Publicly Available",
-      "major_demographic": "16-24 year olds",
-      "type_of_content": "Short-form Videos",
-      "founder": "Zhang Yiming",
-      "year_founded": 2016,
-      "headquarters": "Beijing, China",
-      "parent_company": "ByteDance",
-      "image": "https://i.imgur.com/p1kRGiq.png" ,
-      "link":"http://127.0.0.1:8000/webs/under_construction/"
-    },
-    
-    {
-    "name": "Reddit",
-    "number_of_users": "430 million",
-    "daily_users": "Not Publicly Available",
-    "major_demographic": "18-29 year olds",
-    "type_of_content": "Forums, Posts",
-    "founder": "Steve Huffman, Alexis Ohanian",
-    "year_founded": 2005,
-    "headquarters": "San Francisco, California",
-    "parent_company": "Advance Publications",
-    "image": "https://i.imgur.com/EYt1TZW.png",
-    "link":"Scrapper/"
-    },
-    {
-      "name": "X (formerly Twitter)",
-      "number_of_users": "330 million", 
-      "daily_users": "187 million", 
-      "major_demographic": "18-29 year olds",
-      "type_of_content": "Text-based Posts",
-      "founder": "Jack Dorsey",
-      "year_founded": 2006,
-      "headquarters": "San Francisco, California",
-      "parent_company": "X Holdings Corp",
-      "image": "https://i.imgur.com/Qt30Rq2.png",
-      "link":"http://127.0.0.1:8000/webs/under_construction/"
-       
-    },
-    {
-    "name": "Discord",
-    "number_of_users": "300 million",
-    "daily_users": "Not Publicly Available",
-    "major_demographic": "15-25 year olds",
-    "type_of_content": "Messaging, Voice Chat",
-    "founder": "Jason Citron, Stan Vishnevskiy",
-    "year_founded": 2015,
-    "headquarters": "San Francisco, California",
-    "parent_company": "Discord Inc.",
-    "image": "https://i.imgur.com/VuD0dmJ.png",
-    "link":"http://127.0.0.1:8000/"
-    }
+        "name": "Harvard Dataverse",
+        "number_of_users": "Not Publicly Available",
+        "daily_users": "Not Publicly Available",
+        "major_demographic": "Researchers, Academics",
+        "type_of_content": "Datasets, Research Data",
+        "founder": "Institute for Quantitative Social Science at Harvard University",
+        "year_founded": 2007,
+        "headquarters": "Cambridge, Massachusetts",
+        "parent_company": "Harvard University",
+        "image": "https://i.imgur.com/zLuwIQe.jpeg",
+        "link": "http://127.0.0.1:8000/webs/under_construction/"
+  }, 
+  {
+          "name": "X (formerly Twitter)",
+          "number_of_users": "330 million",
+          "daily_users": "187 million",
+          "major_demographic": "18-29 year olds",
+          "type_of_content": "Text-based Posts",
+          "founder": "Jack Dorsey",
+          "year_founded": 2006,
+          "headquarters": "San Francisco, California",
+          "parent_company": "X Holdings Corp",
+          "image": "https://i.imgur.com/Qt30Rq2.png",
+          "link": "http://127.0.0.1:8000/webs/under_construction/"
+      }
+  ,
+      {
+          "name": "Reddit",
+          "number_of_users": "430 million",
+          "daily_users": "Not Publicly Available",
+          "major_demographic": "18-29 year olds",
+          "type_of_content": "Forums, Posts",
+          "founder": "Steve Huffman, Alexis Ohanian",
+          "year_founded": 2005,
+          "headquarters": "San Francisco, California",
+          "parent_company": "Advance Publications",
+          "image": "https://i.imgur.com/EYt1TZW.png",
+          "link": "Scrapper/"
+      }
+  ,
+      {
+          "name": "PubMed Central (PMC)",
+          "number_of_users": "Not Publicly Available",
+          "daily_users": "Not Publicly Available",
+          "major_demographic": "Researchers, Academics",
+          "type_of_content": "Scientific Articles, Journals",
+          "founder": "National Institutes of Health",
+          "year_founded": 2000,
+          "headquarters": "Bethesda, Maryland",
+          "parent_company": "U.S. National Library of Medicine",
+          "image": "https://i.imgur.com/aK2x4NA.png",
+          "link": "http://127.0.0.1:8000/webs/under_construction/"
+      },
+      {
+          "name": "Google Scholar",
+          "number_of_users": "Not Publicly Available",
+          "daily_users": "Not Publicly Available",
+          "major_demographic": "Researchers, Academics, Students",
+          "type_of_content": "Academic Papers, Citations",
+          "founder": "Google Inc.",
+          "year_founded": 2004,
+          "headquarters": "Mountain View, California",
+          "parent_company": "Google",
+          "image": "https://i.imgur.com/WLhD0Ex.png",
+          "link": "http://127.0.0.1:8000/webs/under_construction/"
+      },
+      {
+          "name": "The National Institutes of Health (NIH)",
+          "number_of_users": "Not Publicly Available",
+          "daily_users": "Not Publicly Available",
+          "major_demographic": "Researchers, Healthcare Professionals",
+          "type_of_content": "Health Information, Research",
+          "founder": "U.S. Government",
+          "year_founded": 1887,
+          "headquarters": "Bethesda, Maryland",
+          "parent_company": "U.S. Department of Health & Human Services",
+          "image": "https://i.imgur.com/jpJNneQ.png",
+          "link": "http://127.0.0.1:8000/webs/under_construction/"
+      }
   ]
-
-  

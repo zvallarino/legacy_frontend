@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 
 function ButtonsGeneral({show, setShow}) {
-    const buttons = ["Communities", "Posts", "Comments", "People", "Go Back"];
+    const buttons = ["Communities", "Posts", "Comments", "Quick Search", "Go Back"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
     
@@ -21,7 +21,7 @@ function ButtonsGeneral({show, setShow}) {
             router.push('http://localhost:3000/comment');
     
         } else if (i == 3) {
-            router.push('http://localhost:3000/person');
+            router.push('http://localhost:3000/qsearch');
         }else if (i == 4) {
             router.push('http://localhost:3000/Scrapper');
         }

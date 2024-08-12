@@ -15,7 +15,7 @@ import dynamic from 'next/dynamic';
 
 export default function Scrapper() {
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
  
   const [categories, setCategories] = useState([]);
