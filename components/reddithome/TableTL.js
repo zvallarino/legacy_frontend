@@ -4,7 +4,7 @@ import Rows from './Rows';
 
 function TableTL({ table }) {
     const headers =
-    ["name", "description", "subscribers"] 
+    ["Name", "Description", "Subscribers"] 
 
     return (
         <div className="border-collapse border border-gray-400 rounded-lg mx-4 my-2 shadow-md">

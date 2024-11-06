@@ -5,6 +5,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import Crow from './CRow';
 import Popup from '../Search/Popup';
 import * as XLSX from 'xlsx';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 
 function CommentSearch() {
@@ -67,38 +68,46 @@ function CommentSearch() {
 
     return (
         <div>
-          <div className= 'flex justify-center'>
-          {results.length > 0 && (
-      <div className='flex items-center border-t-2 border-b-2 border-l-2 border-gray-300 rounded-l-lg justify-center px-2 hover:bg-green-600'  onClick={() => setShowPopup(true)}>
-      <CiExport size="30" className="mx-2" /> {/* Icon */}
-  </div>
-    )}
-          <form onSubmit={handleSubmit} className="flex items-center border-2 border-gray-300 rounded-lg">
-        <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search Comments"
-            className="w-96 h-12 px-4 text-lg" // Increased width, height, and font size
-        />
-        <div className="border-l h-8 border-gray-300 mx-2"></div> {/* Vertical line */}
-        <button type="submit" className="pr-4">
-            <CiSearch size="30" />
-        </button>
-    </form>
-          </div>
-            {isLoading && <div>Loading...</div>}
-            {error && <div>Error: {error}</div>}
-            {results.length > 0 && (
-        <div className="flex flex-col items-center"> {/* Flex container to center children */}
-          {results.map((comment, index) => (
-    <div key={index} className="w-full flex justify-center mb-4">
-        <Crow comment={comment} /> {/* Pass as 'comment' */}
-    </div>
-))}
-        </div>
-    )}
-          <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport} />
+            <div className='flex justify-center'>
+                {results.length > 0 && (
+                    <div className='flex items-center border-t-2 border-b-2 border-l-2 border-gray-300 rounded-l-lg justify-center px-2 hover:bg-green-600' onClick={() => setShowPopup(true)}>
+                        <CiExport size="30" className="mx-2" />
+                    </div>
+                )}
+                <form onSubmit={handleSubmit} className="flex items-center border-2 border-gray-300 rounded-lg">
+                    <input
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Search Comments"
+                        className="w-96 h-12 px-4 text-lg"
+                    />
+                    <div className="border-l h-8 border-gray-300 mx-2"></div>
+                    <button type="submit" className="pr-4">
+                        <CiSearch size="30" />
+                    </button>
+                </form>
+            </div>
+            
+            <div className="flex flex-col items-center mt-4">
+                {isLoading ? (
+                    <div className="flex justify-center items-center h-32">
+                        <AiOutlineLoading3Quarters className="animate-spin text-4xl text-blue-500" />
+                    </div>
+                ) : error ? (
+                    <div className="text-red-500">Error: {error}</div>
+                ) : results.length > 0 ? (
+                    <div className="w-full">
+                        {results.map((comment, index) => (
+                            <div key={index} className="flex justify-center mb-4">
+                                <Crow comment={comment} />
+                            </div>
+                        ))}
+                    </div>
+                ) : null}
+            </div>
+            
+            <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport} />
         </div>
     );
 }

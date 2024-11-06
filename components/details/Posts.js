@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 ;
 import RowsD from './RowsD';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 function PostDetail({ subreddit }) {
     const [results, setResults] = useState([]);
@@ -38,17 +39,23 @@ function PostDetail({ subreddit }) {
 
     return (
         <div>
-            {isLoading && <div>Loading...</div>}
-            {error && <div>Error: {error}</div>}
-            {results.length > 0 && (
-                <div className="flex flex-col items-center">
-                    {results.map((post, index) => (
-                        <div key={index} className="w-full flex justify-center mb-4">
-                            <RowsD post={post} />
-                        </div>
-                    ))}
-                </div>
-            )}
+            <div className="flex flex-col items-center mt-4">
+                {isLoading ? (
+                    <div className="flex justify-center items-center h-32">
+                        <AiOutlineLoading3Quarters className="animate-spin text-4xl text-blue-500" />
+                    </div>
+                ) : error ? (
+                    <div className="text-red-500">Error: {error}</div>
+                ) : results.length > 0 ? (
+                    <div className="w-full">
+                        {results.map((post, index) => (
+                            <div key={index} className="flex justify-center mb-4">
+                                <RowsD post={post} />
+                            </div>
+                        ))}
+                    </div>
+                ) : null}
+            </div>
         </div>
     );
 }

@@ -7,11 +7,11 @@ function Toolbar() {
 
   const handleClick = () => {
     const pathname = router.pathname;
-    router.push('http://127.0.0.1:8000/');
+    router.push('http://localhost:3000/Homepage');
   };
 
   const handleOtherClick = () => {
-    router.push('http://localhost:3000/');
+    router.push('http://localhost:3000/Scrapper');
 };
 
 const goBackHome = () => {
@@ -29,10 +29,10 @@ const goTop = () => {
     <div className="flex space-x-4">
         <button
          onClick={handleClick} 
-        className="text-white hover:text-gray-300">Django</button>
+        className="text-white hover:text-gray-300">Hub</button>
         <button
         onClick={handleOtherClick}
-        className="text-white hover:text-gray-300">Next</button>
+        className="text-white hover:text-gray-300">Charts</button>
         <button
         onClick={goBackHome}
         className="text-white hover:text-gray-300">General Search</button>
