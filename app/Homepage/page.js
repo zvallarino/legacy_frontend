@@ -16,7 +16,7 @@ export default function Homepage() {
   const [show, setShow] = useState(false)
   return (
 
-<div className="flex-col h-screen	w-screen bg-neutral-100">
+<div className="flex-col h-screen	w-screen bg-white">
 
 
 
@@ -26,8 +26,7 @@ export default function Homepage() {
         {/* disclaimer */}
         <Header />
         
-        {/* Buttons */}
-        <div className='' onClick={()=>setShow(!show)}><Buttons show ={show} setShow ={setShow} /></div>
+       
       
 
         {/* Pop Council Tables*/}

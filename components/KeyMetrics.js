@@ -19,8 +19,8 @@ function KeyMetrics() {
 }
 
   return (
-    <div className='h-full w-full bg-neutral-100'>
-      <div className='text-black text-2xl font-bold bg-neutral-100'><div className='my-6 p-4 rounded-md shadow-md bg-white border-2 mr-2'>Key Metrics(Over the last 30 days)</div></div>
+    <div className='h-full w-full bg-white'>
+      <div className='text-black text-2xl font-bold bg-white'><div className='my-6 p-4 rounded-md shadow-md bg-white border-2 mr-2'>Key Metrics(Over the last 30 days)</div></div>
    
         <div className='text-black border-2 bg-white p-2 my-10 mr-2 rounded-md shadow-md'>
         <div className="flex ml-2">

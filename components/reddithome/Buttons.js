@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 
 function Buttons({show, setShow}) {
-    const buttons = ["Top Subreddits", "PopCo Tables", "General Search"];
+    const buttons = ["Top Subreddits", "PopCo Tables", "Extract Data"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
     
@@ -16,7 +16,7 @@ function Buttons({show, setShow}) {
         } else if (i == 1) {
             setShow(false);
         } else if (i == 2) {
-            router.push('http://localhost:3000/subreddit');
+            router.push('http://localhost:3000/postsubreddit');
         }
     }
     const buttonsMap = () => buttons.map((button, index) => {
@@ -38,8 +38,8 @@ function Buttons({show, setShow}) {
     
 
     return (
-        <div className='flex justify-center rounded-lg m-2'>
-            <div className='flex justify-center rounded-lg bg-gray-600 m-2'>
+        <div className='flex justify-center rounded-lg my-8'>
+            <div className='flex justify-center rounded-lg bg-blue-600'>
                 {buttonsMap()}
             </div>
         </div>

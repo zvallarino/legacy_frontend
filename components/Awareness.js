@@ -53,7 +53,7 @@ function Awareness() {
   };
 
   return (
-    <div className=' text-black bg-neutral-100 w-full h-full p-2 '>
+    <div className=' text-black w-full h-full p-2 '>
       <h1 className='text-black text-xl font-bold mb-8 bg-white p-4 my-2 rounded-md shadow-md '>Awareness (Last 6 Months)</h1>
       <table className="w-full text-left  rounded-md shadow-md text-center bg-white">
         <thead>

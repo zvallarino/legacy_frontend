@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import AppContext from '../context/AppContext';
 import { useState } from 'react';
+import Toolbar from '@/components/scrapper/Toolbar';
 
 const inter = Inter({ subsets: ['latin'] })
 

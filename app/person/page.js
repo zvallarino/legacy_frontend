@@ -14,6 +14,7 @@ import { useState } from 'react';
 export default function Scrapper() {
 
   const [show, setShow] = useState(true);
+  
 
   return (
     <main className="flex-col h-screen	w-screen bg-neutral-100">
