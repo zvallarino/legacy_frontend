@@ -12,7 +12,7 @@ function Box({ social }) {
   };
 
   return (
-    <div onClick = {handleClick} className="card w-80 h-180 p-4 border border-gray-200 bg-white shadow-md hover:bg-blue-100 text-black rounded-lg shadow-sm mb-4 transition duration-150 ease-in-out"> {/* Added bg-white for white background and text-black for black text */}
+    <div onClick = {handleClick} className="card w-[420px] h-180 p-4 mx-12 border border-gray-200 bg-white shadow-md hover:bg-blue-100 text-black rounded-lg shadow-sm mb-4 transition duration-150 ease-in-out"> {/* Added bg-white for white background and text-black for black text */}
         <div className="w-full h-40 flex justify-center items-center mb-4 relative"> {/* Adjusted div for image */}
           <Image 
             src={social.image} 
@@ -37,12 +37,12 @@ function Box({ social }) {
 
         <div className="py-1 font-semibold">Type of Content:</div>
         <div className="py-1">{social.type_of_content}</div>
-
+{/* 
         <div className="py-1 font-semibold">Year Founded:</div>
         <div className="py-1">{social.year_founded}</div>
 
         <div className="py-1 font-semibold">headquarters:</div>
-        <div className="py-1">{social.headquarters}</div>
+        <div className="py-1">{social.headquarters}</div> */}
 
 
       </div>

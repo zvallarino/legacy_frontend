@@ -12,6 +12,11 @@ import Graph from '@/components/details/Graph';
 import Posts from '@/components/details/Posts';
 import Popup from '@/components/Search/Popup';
 import * as XLSX from 'xlsx';
+import DHeader from '@/components/scrapper/DHeader';
+import { BsSave2 } from 'react-icons/bs';
+import { GiMaterialsScience } from "react-icons/gi";
+import { BsFillSignpostSplitFill } from "react-icons/bs";
+
 
 export default function Scrapper() {
   const router = useRouter();
@@ -27,7 +32,7 @@ export default function Scrapper() {
 
     const exportToExcel = () => {
       const ws = XLSX.utils.json_to_sheet([], {
-        header: ["subreddit", "username", "icon_url", "created_utc", "title", "score", "num_comments"],
+          header: ["subreddit", "username", "icon_url", "created_utc", "title", "score", "num_comments"],
       });
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, "Data");
@@ -50,22 +55,47 @@ export default function Scrapper() {
   console.log(currentName)
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-neutral-100 text-black">
+    <div className="flex flex-col h-screen w-screen  text-black">
     <Toolbar />
-    <Header />
-
+    <DHeader />
+    <div className='flex w-full  mt-4'>
+          <div className='flex w-1/6'></div>
+          <div className='flex w-2/3 flex-col'>
+  <div className='text-blue-900 text-4xl flex'>
+    <div className='mr-4'><GiMaterialsScience /></div>
+    Overview
+  </div>
+  <div className='w-full'>
+    <hr className="my-4 border-t-2 border-blue-950 rounded-full" />
+  </div>
+</div>
+          <div className='flex w-1/6'></div>
+        </div>
     <div className="mt-2 flex-grow">
-      <div className="flex flex-row justify-center bg-nuetral-100">
+      <div className="flex flex-row justify-center bg-nuetral-100 ">
      
         <Sidebar timeRange={timeRange} setTimeRange={setTimeRange} currentName={currentName} onExportClick={togglePopup} />
           <Graph currentName ={currentName} />
   
       </div>
       <div className='flex justify-center'>
-        <div className='text-black bg-white text-xl p-2 my-2 rounded-lg shadow-md'> List of Posts</div></div>
-        <div className='flex justify-center text-xl my-2'>
-  <hr style={{ height: '2px', backgroundColor: 'black', width: '23%' }} />
         </div>
+        <div className='flex justify-center text-xl my-2'>
+        </div>
+        <div className='flex w-full '>
+          <div className='flex w-1/6'></div>
+          <div className='flex w-2/3 flex-col'>
+  <div className='text-blue-900 text-4xl flex'>
+    <div className='mr-4'><BsFillSignpostSplitFill  /></div>
+    Posts
+  </div>
+  <div className='w-full'>
+    <hr className="my-4 border-t-2 border-blue-950 rounded-full" />
+  </div>
+</div>
+          <div className='flex w-1/6'></div>
+        </div>
+                   
       <Posts subreddit={currentName} />
     </div>
     <Popup show={showPopup} onClose={handlePopupClose} onExport={handleExport}/>

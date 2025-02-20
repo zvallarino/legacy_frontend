@@ -7,8 +7,8 @@ import LineChart from "./LineChart";
 function Engaged() {
   const [timeRange, setTimeRange] = useState("7d");
   const [dateRange, setDateRange] = useState("");
+  
   const [current, setCurrent] = useState([82577,8391834, 70190,7636569]);
- 
 
   useEffect(() => {
     setDateRange(getDateRangeString(timeRange));
@@ -136,12 +136,12 @@ function Engaged() {
 
     console.log(endDate);
     console.log(startDate);
-
     return `${formatDate(startDate)} - ${formatDate(endDate)}`;
+
   };
 
   return (
-    <div className="flex flex-col h-full w-full  bg-neutral-100 p-2">
+    <div className="flex flex-col h-full w-full  bg-white p-2">
       <div className=" bg-white shadow-md rounded-md px-2 mb-4">
         <h1 className="text-2xl font-bold my-4 text-black  bg-">
           Engagement and Impressions

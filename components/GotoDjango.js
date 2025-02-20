@@ -19,7 +19,7 @@ export default function GotoDjango() {
 
 
   return (
-    <div className="bg-neutral-100 w-full h-full flex flex-col items-center">
+    <div className="bg-white w-full h-full flex flex-col items-center">
         <button 
             className="px-5 py-2.5 text-2xl font-bold text-black bg-white rounded-md shadow-md cursor-pointer w-full mt-4"
             onClick={handleClick}>
@@ -48,4 +48,3 @@ export default function GotoDjango() {
 }
 
 
-//https://i.imgur.com/KMYxe7d.jpg ( if you want a robot picture)

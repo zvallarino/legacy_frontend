@@ -17,7 +17,7 @@
 }
 
 body {
-  @apply bg-neutral-100; /* Apply Tailwind's bg-neutral-100 */
+  @apply bg-white; /* Apply Tailwind's bg-neutral-100 */
   color: rgb(var(--foreground-rgb));
   /* Remove the linear-gradient background if you want just bg-neutral-100 */
   /* background: linear-gradient(

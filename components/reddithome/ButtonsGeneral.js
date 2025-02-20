@@ -1,5 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { MdShortcut } from "react-icons/md";
+
 
 function ButtonsGeneral({show, setShow}) {
     const buttons = ["Communities", "Posts", "Comments", "Quick Search", "Go Back"];
@@ -12,7 +14,7 @@ function ButtonsGeneral({show, setShow}) {
         console.log('The link was clicked.');
         
         if (i == 0) {
-            router.push('http://localhost:3000/subreddit');
+            router.push('http://localhost:3000/postsubreddit');
         
         } else if (i == 1) {
             router.push('http://localhost:3000/general');
@@ -45,10 +47,27 @@ function ButtonsGeneral({show, setShow}) {
     });
 
     return (
-        <div className='flex justify-center rounded-lg m-2'>
-            <div className='flex justify-center rounded-lg bg-gray-600 m-2'>
-                {buttonsMap()}
-            </div>
+        <div className='flex w-full mt-20'>
+                  <div className="flex w-1/6 "></div>
+
+         <div className='flex w-4/6 flex-col'>
+              <div className='flex'>
+                    <MdShortcut className='text-black text-4xl' />
+        
+                    <div className = 'text-blue-900 text-4xl'>Quick Links</div>
+              </div>
+              <hr className="border-t-2 mb-2 mt-2 border-blue-950 rounded-full" />
+
+                
+                <div className='flex justify-center rounded-lg  m-2 w-full items-center justify-center '>
+                
+                   <div className="flex bg-blue-600 rounded-lg">
+                     {buttonsMap()}
+                     </div>
+                </div>
+         </div>
+            <div className="flex w-1/6 "></div>
+
         </div>
     );
 }
