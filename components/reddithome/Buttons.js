@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-function Buttons({show, setShow}) {
+function Buttons({show, setShow, screenType}) {
     const buttons = ["Top Subreddits", "PopCo Tables", "Extract Data"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
@@ -30,7 +30,7 @@ function Buttons({show, setShow}) {
         return (
             <div key={index} 
                  onClick={e => handleClick(e, index)} 
-                 className={`text-xl p-4 hover:bg-gray-500 ${roundedClass}`}>
+                 className={`${screenType === 'laptop' ? 'text-sm' : 'text-xl'} p-4 hover:bg-gray-500 ${roundedClass}`}>
                 {button}
             </div>
         );
@@ -38,7 +38,7 @@ function Buttons({show, setShow}) {
     
 
     return (
-        <div className='flex justify-center rounded-lg my-8'>
+        <div className={`flex justify-center rounded-lg my-8 ${screenType === 'laptop' ? 'my-2' : 'my-8'}`}>
             <div className='flex justify-center rounded-lg bg-blue-600'>
                 {buttonsMap()}
             </div>

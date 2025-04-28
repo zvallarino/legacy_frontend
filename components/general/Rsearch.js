@@ -7,7 +7,7 @@ import Popup from '../Search/Popup';
 import * as XLSX from 'xlsx';
 import Rrow from './RRow';
 
-function Rsearch() {
+function Rsearch({screenType}) {
   const [query, setQuery] = useState('');
   const [allResults, setAllResults] = useState([]); // Single state variable for results
   const [isLoading, setLoading] = useState(false);

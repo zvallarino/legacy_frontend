@@ -2,7 +2,7 @@ import React from 'react';
 import tabledata from "../../subreddits.json";
 import Table from './Table';
 
-function Tables({ categories }) {
+function Tables({ categories,screenType }) {
     const tableElements = [];
 
     categories.forEach((category, index) => {
@@ -10,9 +10,9 @@ function Tables({ categories }) {
         if (category.subreddits && category.subreddits.length) {
             tableElements.push(
                 <div key={category.id} className="w-1/3 p-2">
-                    <h1 className='text-2xl text-black ml'>{category.name}</h1>
-                    <Table table={category.subreddits} />
-                </div>
+                    <h1 className={`${screenType === 'laptop' ? 'text-lg' : 'text-2xl'} `}>{category.name}</h1>
+                    <Table table={category.subreddits} screenType ={screenType}/>
+                </div> 
             );
         }
     });

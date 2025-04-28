@@ -9,45 +9,64 @@ import Header from '@/components/scrapper/Header';
 import Toolbar from '@/components/scrapper/Toolbar';
 import XHeader from '@/components/scrapper/XHeader';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function Scrapper() {
-
-  const [show, setShow] = useState(true);
-  const [time, setTime] = useState("all");
-
-  const timeOptions = [
-    { label: "Today", value: "day" },
-    { label: "This Hour", value: "hour" },
-    { label: "This Week", value: "week" },
-    { label: "This Month", value: "month" },
-    { label: "This Year", value: "year" },
-    { label: "All", value: "all" },
-  ];
-
-
-  const [typeList, setTypeList] = useState("top");
-
-  const listOptions = [
-    { label: "Top", value: "top" },
-    { label: "Best", value: "best" },
-    { label: "Hot", value: "hot" },
-    { label: "New", value: "new" },
-    { label: "Rising", value: "rising" },
-  ];
+  const [show, setShow] = useState(true); // This state seems unused currently
+    const [time, setTime] = useState("all");
+ 
+    const timeOptions = [
+      { label: "Today", value: "day" },
+      { label: "This Hour", value: "hour" },
+      { label: "This Week", value: "week" },
+      { label: "This Month", value: "month" },
+      { label: "This Year", value: "year" },
+      { label: "All", value: "all" },
+    ];
+ 
+ 
+    const [typeList, setTypeList] = useState("top");
+ 
+    const listOptions = [
+      { label: "Top", value: "top" },
+      { label: "Best", value: "best" },
+      { label: "Hot", value: "hot" },
+      { label: "New", value: "new" },
+      { label: "Rising", value: "rising" },
+    ];
+ 
+    // --- Start: Added screenType logic ---
+    const [screenType, setScreenType] = useState('laptop'); // Default state
+ 
+    useEffect(() => {
+      const handleResize = () => {
+        // Using the same breakpoint (1424px) - adjust if needed
+        setScreenType(window.innerWidth >= 1424 ? 'desktop' : 'laptop');
+      };
+ 
+      // Set initial screen type on mount
+      handleResize();
+ 
+      // Add event listener for resize
+      window.addEventListener('resize', handleResize);
+ 
+      // Cleanup listener on unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, []); // Empty dependency array for mount/unmount execution
+    // --- End: Added screenType logic ---
 
   return (
-    <main className="flex-col h-screen	w-screen bg-white">
+    <main className="w-full bg-white">
 
         {/* toolbar */}
         <Toolbar />
 
         {/* disclaimer */}
-        <XHeader />
+        <XHeader screenType={screenType} />
         
         {/* Buttons */}
-        <ButtonsGeneral />
+        <ButtonsGeneral  screenType={screenType}  />
 
       
     {/* Timeframe selection divs */}

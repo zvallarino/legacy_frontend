@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { MdShortcut } from "react-icons/md";
 
 
-function ButtonsResearch({show, setShow}) {
+function ButtonsResearch({show, setShow, screenType}) {
     const buttons = ["Terms", "Journals", "Authors", "Go Back"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
@@ -47,15 +47,14 @@ function ButtonsResearch({show, setShow}) {
                   <div className="flex w-1/6 "></div>
 
          <div className='flex w-4/6 flex-col'>
-              <div className='flex'>
-                    <MdShortcut className='text-black text-4xl' />
+              <div className='flex mt-2'>
+                    <MdShortcut className={`text-black ${screenType === 'laptop' ? 'text-2xl ' : 'text-4xl'}`} />
         
-                    <div className = 'text-blue-900 text-4xl'>Quick Links</div>
+                    <div className = {`text-blue-900 ${screenType === 'laptop' ? 'text-2xl ' : 'text-4xl'}`}>Quick Links</div>
               </div>
               <hr className="border-t-2 mb-2 border-blue-950 rounded-full" />
 
-                
-                <div className='flex justify-center rounded-lg  m-2 w-full items-center justify-center '>
+                <div className='flex justify-center rounded-lg  mt-2 w-full items-center justify-center '>
                 
                    <div className="flex bg-blue-600 rounded-lg">
                      {buttonsMap()}
