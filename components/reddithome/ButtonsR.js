@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 
-function ButtonsR({show, setShow, togglePopup}) {
+function ButtonsR({show, setShow, togglePopup,screenType}) {
     const buttons = ["Edit Interests", "Extract Data"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
@@ -30,7 +30,7 @@ function ButtonsR({show, setShow, togglePopup}) {
         return (
             <div key={index} 
                  onClick={e => handleClick(e, index)} 
-                 className={`text-xl p-4 hover:bg-gray-500 ${roundedClass}`}>
+                 className={`${screenType === 'laptop' ? ' text-sm' : 'text-xl'} p-2 hover:bg-gray-500 ${roundedClass}`}>
                 {button}
             </div>
         );
@@ -38,8 +38,8 @@ function ButtonsR({show, setShow, togglePopup}) {
     
 
     return (
-        <div className='flex justify-center rounded-lg m-2'>
-            <div className='flex justify-center rounded-lg bg-blue-600 m-2'>
+        <div className='flex justify-center rounded-lg'>
+            <div className='flex justify-center rounded-lg bg-blue-600'>
                 {buttonsMap()}
             </div>
         </div>

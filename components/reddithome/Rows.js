@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import AppContext from '@/context/AppContext';
 
 
-function Rows({ row }) {
+function Rows({ row,screenType }) {
 
     const router = useRouter();
     const { setCurrentName, setPostInfo } = useContext(AppContext);
@@ -32,9 +32,9 @@ function Rows({ row }) {
 
     return (
         <div onClick={handleClick} className='flex justify-between'>
-            <div className='text-sm mr-2 font-bold'>{row.rank||row.name}</div>
-            <div className='text-sm text-left'>{row.subreddit||row.description}</div>
-            <div className='text-sm text-left'>
+            <div className={` ${screenType === 'laptop' ? 'text-xs' : 'text-sm'} mr-2 font-bold`}>{row.rank||row.name}</div>
+            <div className={`${screenType === 'laptop' ? 'text-xs' : 'text-sm'} text-left`}>{row.subreddit||row.description}</div>
+            <div className={`${screenType === 'laptop' ? 'text-xs' : 'text-sm'} text-left`}>
             {row.number ? formatNumber(row.number) : (row.subscribers ? formatNumber(row.subscribers) : '')}
                 </div>
         </div>

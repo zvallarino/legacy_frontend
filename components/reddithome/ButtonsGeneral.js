@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { MdShortcut } from "react-icons/md";
 
 
-function ButtonsGeneral({show, setShow}) {
+function ButtonsGeneral({show, setShow, screenType}) {
     const buttons = ["Communities", "Posts", "Comments", "Quick Search","Incremental", "Go Back"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
@@ -42,14 +42,14 @@ function ButtonsGeneral({show, setShow}) {
         return (
             <div key={index} 
                  onClick={e => handleClick(e, index)} 
-                 className={`text-xl p-4 hover:bg-gray-500 ${roundedClass}`}>
+                 className={`${screenType === 'laptop' ? 'text-m' : 'text-xl'}  p-4 hover:bg-gray-500 ${roundedClass}`}>
                 {button}
             </div>
         );
     });
 
     return (
-        <div className='flex w-full mt-20'>
+        <div className={`flex w-full ${screenType === 'laptop' ? 'mt-28 ' : 'mt-20 '}`}>
                   <div className="flex w-1/6 "></div>
 
          <div className='flex w-4/6 flex-col'>

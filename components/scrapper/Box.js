@@ -1,3 +1,4 @@
+// Updated Box.js
 import Image from 'next/image';
 import React from 'react'
 import { useRouter } from 'next/navigation';
@@ -12,17 +13,17 @@ function Box({ social }) {
   };
 
   return (
-    <div onClick = {handleClick} className="card w-[420px] h-180 p-4 mx-12 border border-gray-200 bg-white shadow-md hover:bg-blue-100 text-black rounded-lg shadow-sm mb-4 transition duration-150 ease-in-out"> {/* Added bg-white for white background and text-black for black text */}
-        <div className="w-full h-40 flex justify-center items-center mb-4 relative"> {/* Adjusted div for image */}
+    <div onClick={handleClick} className="card w-full max-w-sm h-auto p-3 lg:p-4 border border-gray-200 bg-white shadow-md hover:bg-blue-100 text-black rounded-lg shadow-sm mb-3 lg:mb-4 transition duration-150 ease-in-out">
+        <div className="w-full h-28 lg:h-32 flex justify-center items-center mb-3 lg:mb-4 relative">
           <Image 
             src={social.image} 
-            alt={`${social.name} Logo`} 
+            alt={`${social.name} Logo`}
             layout="fill" 
-            objectFit="contain" // Keeps the aspect ratio of the image
+            objectFit="contain"
           />
         </div>
       
-      <div className="grid grid-cols-2 gap-1">
+      <div className="grid grid-cols-2 gap-1 text-sm">
         <div className="py-1 font-semibold">Name:</div>
         <div className="py-1">{social.name}</div>
 
@@ -37,17 +38,9 @@ function Box({ social }) {
 
         <div className="py-1 font-semibold">Type of Content:</div>
         <div className="py-1">{social.type_of_content}</div>
-{/* 
-        <div className="py-1 font-semibold">Year Founded:</div>
-        <div className="py-1">{social.year_founded}</div>
-
-        <div className="py-1 font-semibold">headquarters:</div>
-        <div className="py-1">{social.headquarters}</div> */}
-
-
       </div>
     </div>
   );
 }
   
-  export default Box;
+export default Box;

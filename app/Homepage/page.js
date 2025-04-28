@@ -1,3 +1,4 @@
+// Updated Page.js
 "use client"
 
 import Buttons from '@/components/reddithome/Buttons';
@@ -8,33 +9,37 @@ import Explaination from '@/components/scrapper/Explaination';
 import Header from '@/components/scrapper/Header';
 import Toolbar from '@/components/scrapper/Toolbar';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 
 export default function Homepage() {
+  const [show, setShow] = useState(false);
+  const [screenType, setScreenType] = useState('laptop');
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenType(window.innerWidth >= 1424 ? 'desktop' : 'laptop');
+    };
+    
+    // Set initial screen type
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const [show, setShow] = useState(false)
   return (
+    <div className={`flex-col min-h-screen w-screen ${screenType === 'laptop' ? '' : ''}`}>
+      {/* toolbar */}
+      <Toolbar />
 
-<div className="flex-col h-screen	w-screen bg-white">
-
-
-
-        {/* toolbar */}
-        <Toolbar />
-
-        {/* disclaimer */}
-        <Header />
-        
-       
+      {/* disclaimer */}
+      <Header />
       
-
-        {/* Pop Council Tables*/}
-        <div className='text-black'><Boxes /></div>
-
-
-
+      {/* Pop Council Tables*/}
+      <div className='text-black'><Boxes /></div>
     </div>
-
   )
 }

@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import AppContext from '@/context/AppContext';
 
 
-function RowsR({ row, categoryName }) {
+function RowsR({ row, categoryName, screenType }) {
 
     const router = useRouter();
     const { setCurrentName, setPostInfo } = useContext(AppContext);
@@ -39,11 +39,11 @@ function RowsR({ row, categoryName }) {
 
     return (
         <div onClick={handleClick} className='flex justify-between'>
-               <div className="text-sm text-black mr-2 font-bold">
+               <div className={`${screenType === 'laptop' ? 'text-xs' : 'text-sm'}  text-black mr-2 font-bold`}>
         {truncateText(row.journal_title, 45)}
       </div>
-      <div className="ml-2 text-sm text-left">{row.title}</div>
-      <div className="text-sm text-left">{row.pub_date}</div>
+      <div className={`ml-2 ${screenType === 'laptop' ? 'text-xs' : 'text-sm'}  text-left`}>{row.title}</div>
+      <div className={`${screenType === 'laptop' ? 'text-xs' : 'text-sm'}  text-left`}>{row.pub_date}</div>
         </div>
     );
 }
