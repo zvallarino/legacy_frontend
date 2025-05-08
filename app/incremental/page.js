@@ -3,6 +3,7 @@
 
 
 import PostSearch from '@/components/general/PostSearch';
+import IncrementalSubredditSearch from '@/components/incremental/IncPostSub';
 import IncPostSub from '@/components/incremental/IncPostSub';
 import ButtonsGeneral from '@/components/reddithome/ButtonsGeneral';
 import Header from '@/components/scrapper/Header';
@@ -13,98 +14,66 @@ import { useState, useEffect } from 'react';
 
 
 export default function Scrapper() {
-  const [show, setShow] = useState(true); // This state seems unused currently
-    const [time, setTime] = useState("all");
- 
-    const timeOptions = [
-      { label: "Today", value: "day" },
-      { label: "This Hour", value: "hour" },
-      { label: "This Week", value: "week" },
-      { label: "This Month", value: "month" },
-      { label: "This Year", value: "year" },
-      { label: "All", value: "all" },
-    ];
- 
- 
-    const [typeList, setTypeList] = useState("top");
- 
-    const listOptions = [
-      { label: "Top", value: "top" },
-      { label: "Best", value: "best" },
-      { label: "Hot", value: "hot" },
-      { label: "New", value: "new" },
-      { label: "Rising", value: "rising" },
-    ];
- 
-    // --- Start: Added screenType logic ---
-    const [screenType, setScreenType] = useState('laptop'); // Default state
- 
-    useEffect(() => {
-      const handleResize = () => {
-        // Using the same breakpoint (1424px) - adjust if needed
-        setScreenType(window.innerWidth >= 1424 ? 'desktop' : 'laptop');
-      };
- 
-      // Set initial screen type on mount
-      handleResize();
- 
-      // Add event listener for resize
-      window.addEventListener('resize', handleResize);
- 
-      // Cleanup listener on unmount
-      return () => window.removeEventListener('resize', handleResize);
-    }, []); // Empty dependency array for mount/unmount execution
-    // --- End: Added screenType logic ---
+    const [time, setTime] = useState("all");
+    const [typeList, setTypeList] = useState("top");
+    const [screenType, setScreenType] = useState('laptop'); // Or your default
 
-  return (
-    <main className="w-full bg-white">
+    const timeOptions = [/* ... */]; // Keep your options
+    const listOptions = [/* ... */]; // Keep your options
 
-        {/* toolbar */}
-        <Toolbar />
+     useEffect(() => { /* ... existing resize logic ... */ }, []);
 
-        {/* disclaimer */}
-        <XHeader screenType={screenType} />
-        
-        {/* Buttons */}
-        <ButtonsGeneral  screenType={screenType}  />
+     return (
+        <main className="w-full bg-white min-h-screen"> {/* Added min-h-screen */}
 
-      
-    {/* Timeframe selection divs */}
-    <div className="flex justify-center gap-4 my-4">
-            {timeOptions.map((option) => (
-            <div
-                key={option.value}
-                onClick={() => setTime(option.value)}
-                className={`cursor-pointer px-4 py-2 border rounded ${
-                time === option.value ? "bg-blue-500 text-white" : "bg-white text-black"
-                }`}
-            >
-                {option.label}
+            {/* Toolbar */}
+            <Toolbar />
+
+            {/* Disclaimer */}
+            <XHeader screenType={screenType} />
+
+             {/* Optional: Buttons */}
+             {/* <ButtonsGeneral screenType={screenType} /> */}
+
+            {/* Timeframe and List Type Selections */}
+             <div className="flex justify-center gap-2 md:gap-4 my-4 px-2 flex-wrap"> {/* Added flex-wrap */}
+                 {timeOptions.map((option) => (
+                     <button // Changed div to button for better accessibility
+                         key={option.value}
+                         onClick={() => setTime(option.value)}
+                         className={`cursor-pointer px-3 py-1 md:px-4 md:py-2 border rounded text-sm md:text-base ${
+                             time === option.value ? "bg-blue-500 text-white border-blue-500" : "bg-white text-black border-gray-300 hover:border-blue-400"
+                         }`}
+                         aria-pressed={time === option.value} // Accessibility
+                     >
+                         {option.label}
+                     </button>
+                 ))}
+             </div>
+
+             <div className='flex justify-center gap-2 md:gap-4 my-4 px-2 flex-wrap'> {/* Added flex-wrap */}
+                 {listOptions.map((option) => (
+                     <button // Changed div to button
+                         key={option.value}
+                         onClick={() => setTypeList(option.value)}
+                          className={`cursor-pointer px-3 py-1 md:px-4 md:py-2 border rounded text-sm md:text-base ${
+                             typeList === option.value ? "bg-blue-500 text-white border-blue-500" : "bg-white text-black border-gray-300 hover:border-blue-400"
+                         }`}
+                         aria-pressed={typeList === option.value} // Accessibility
+                     >
+                         {option.label}
+                     </button>
+                 ))}
+             </div>
+
+            {/* Pass time and typeList to the search component */}
+            <div className="text-black mt-6"> {/* Added margin-top */}
+                 {/* Render the search component directly */}
+                <IncrementalSubredditSearch time={time} typeList={typeList} />
+                 {/* IncPostSub might not be needed if Search handles everything */}
+                 {/* <IncPostSub time={time} typeList={typeList} /> */}
             </div>
-            ))}
-        </div>
 
-      <div className='flex justify-center gap-4 my-4'>
-          {listOptions.map((option) => (
-              <div
-                  key={option.value}
-                  onClick={() => setTypeList(option.value)}
-                  className={`cursor-pointer px-4 py-2 border rounded ${
-                  typeList === option.value ? "bg-blue-500 text-white" : "bg-white text-black"
-                  }`}
-              >
-                  {option.label}
-              </div>
-              ))}
-  
-      </div>
-        
-        {/* Pop Council Tables */}
-        <div className="text-black ">
-            <IncPostSub time={time} typeList ={typeList} />
-        </div>
-      
-        
-    </main>
-  )
+        </main>
+    )
 }
