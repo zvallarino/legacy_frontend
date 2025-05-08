@@ -4,7 +4,7 @@ import { MdShortcut } from "react-icons/md";
 
 
 function ButtonsGeneral({show, setShow, screenType}) {
-    const buttons = ["Communities", "Posts", "Comments", "Quick Search","Incremental", "Go Back"];
+    const buttons = ["Communities", "Posts","Incremental", "Go Back"];
     const tags = ["top100", "popCo", "ssr", "gs"];
     const router = useRouter();
     
@@ -19,14 +19,10 @@ function ButtonsGeneral({show, setShow, screenType}) {
         } else if (i == 1) {
             router.push('http://localhost:3000/general');
     
-        } else if (i == 2) {
-            router.push('http://localhost:3000/comment');
-    
-        } else if (i == 3) {
-            router.push('http://localhost:3000/qsearch');
-        }else if (i == 4) {
+        } 
+        else if (i == 2) {
             router.push('http://localhost:3000/incremental');
-        } else if (i == 5) {
+        } else if (i == 3) {
         router.push('http://localhost:3000/Scrapper');
     }
     }
